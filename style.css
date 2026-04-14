@@ -40,7 +40,7 @@ main {
 #debut {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: center;
     padding: 30px;
 }
 
@@ -49,6 +49,37 @@ main {
     height: auto;
     margin-top: 90px;   
     margin-right: 40px;
+}
+
+#gauche{
+    width: 50%;
+}
+
+#gauche h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+#gauche p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+#carousel {
+    position: relative;
+    width: 40%;
+    margin-right: 40px;
+}
+
+#carousel img {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+#carousel img.active {
+    display: block;
 }
 
 footer {

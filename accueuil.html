@@ -21,10 +21,22 @@
 
         <h1>Département Informatique</h1>
     </header>
-<section id="debut">
-    <h2>Bienvenue sur le site du département d'informatique de l'Efrei Paris !</h2>
-    <img src="/data/imgbvnjpg.jpg" id="photoacc" alt="photo acceuil">
-</section>
+    <section id="debut">
+        <div id="gauche">
+            <h2>Bienvenue sur le site du département d'informatique de l'Efrei Paris !</h2>
+            <p>
+                Rejoignez une formation d’excellence au cœur de l’innovation numérique.
+                Développez vos compétences, travaillez sur des projets concrets et préparez-vous aux métiers de demain.
+            </p>
+            <p>Construisez votre avenir dans l’informatique</p>
+        </div>
+        <div id="carousel">
+            <img src="/data/img1.jpg" class="active">
+            <img src="/data/img2.jpg">
+            <img src="/data/img3.jpg">
+        </div>
+
+    </section>
 
     <footer>
         <p>Département d'informatique</p>
@@ -36,5 +48,17 @@
     </footer>
 
 </body>
+<script>
+    let index = 0;
+    const images = document.querySelectorAll("#carousel img");
+
+    function changeImage() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }
+
+    setInterval(changeImage, 3000);
+</script>
 
 </html>
