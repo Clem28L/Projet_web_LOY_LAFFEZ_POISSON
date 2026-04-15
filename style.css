@@ -40,7 +40,7 @@ main {
 #debut {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: center;
     padding: 30px;
 }
 
@@ -49,6 +49,37 @@ main {
     height: auto;
     margin-top: 90px;   
     margin-right: 40px;
+}
+
+#gauche{
+    width: 50%;
+}
+
+#gauche h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+#gauche p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+#carousel {
+    position: relative;
+    width: 40%;
+    margin-right: 40px;
+}
+
+#carousel img {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+#carousel img.active {
+    display: block;
 }
 
 footer {
@@ -80,82 +111,4 @@ footer img {
 }
 footer {
     margin-top: auto;
-}
-
-
-#section-rdv {
-    background-color: #c9def5;
-    padding: 40px;
-    margin: 20px;
-    border-radius: 10px;
-}
-
-#section-rdv h2 {
-    color: #0A316C;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.conteneur-rdv {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.zone-formulaire {
-    flex: 1;
-}
-
-.zone-calendrier {
-    flex: 1;
-    background-color: #a8cbf0;
-    border: 1px solid #0A316C;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-}
-
-#affichage-calendrier {
-    background-color: #ffffff;
-    height: 350px;
-    border-radius: 5px;
-    padding: 15px;
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    overflow-y: auto;
-}
-
-#form-rdv fieldset {
-    background-color: #a8cbf0;
-    border: 1px solid #0A316C;
-    border-radius: 10px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-input[type="text"], input[type="date"], select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#btn-valider {
-    background-color: #0A316C;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: large;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-#btn-valider:hover {
-    background-color: #81ECEC;
-    color: #0A316C;
 }
