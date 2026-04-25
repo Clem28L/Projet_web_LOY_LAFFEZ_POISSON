@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Département Informatique</title>
+    <title>Espace Admin - Département Informatique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <img src="/data/logo.png" alt="Logo" height="60">
-
+        <div class="haut">
+            <img src="/data/logo.png" alt="Logo" height="50">
+            <h1>Espace admin</h1>
+        </div>
         <nav>
             <a href="accueuil.html">Accueil</a>
             <a href="formations.html">Formations</a>
@@ -18,22 +20,78 @@
             <a href="rdv.html">RDV</a>
             <a href="permanences.html">Permanences</a>
         </nav>
-
-        <h1>Département Informatique</h1>
     </header>
 
     <main>
+        <section id="section-admin">
+            <h2>Ajouter une permanence</h2>
+            <div class="boite-admin">
+                <form id="form-permanence" onsubmit="return false">
+                    <fieldset>
+                        <div class="ligne-form">
+                            <label>Matière :</label>
+                            <input type="text" id="matiere">
+                        </div>
+                        <div class="ligne-form">
+                            <label>Professeur :</label>
+                            <input type="text" id="prof">
+                        </div>
+                        <div class="ligne-form">
+                            <label>Promotion :</label>
+                            <input type="text" id="promo-perm">
+                        </div>
+                        <div class="ligne-form">
+                            <label>Salle :</label>
+                            <input type="text" id="salle">
+                        </div>
+                        <div class="ligne-form">
+                            <label>Date :</label>
+                            <input type="date" id="date-perm">
+                        </div>
+                        <div class="ligne-form">
+                            <label>Heure de début :</label>
+                            <select id="heure-perm">
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <div class="ligne-form">
+                            <label>Durée :</label>
+                            <select id="duree-perm">
+                                <option value="1">1 heure</option>
+                                <option value="2">2 heures</option>
+                                <option value="3">3 heures</option>
+                                <option value="4">4 heures</option>
+                            </select>
+                        </div>
+                        <input type="button" value="Ajouter" class="btn-valider" onclick="ajouterPermanence()">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>Département d'informatique</p>
-        <img src="/data/logo.png" alt="Logo" height="30">
+        <a href="https://www.efrei.fr">
+            <img src="/data/Logo-Efrei-Blanc.png" height="60">
+        </a>
         <nav>
             <a href="a-propos.html">À propos</a>
-            <a href="admin.html">Admin</a>
+            <a href="login.html">Admin</a>
         </nav>
     </footer>
 
+    <script src="scriptper.js"></script>
 </body>
 
 </html>

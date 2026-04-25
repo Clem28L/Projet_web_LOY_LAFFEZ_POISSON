@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. STYLES GLOBAUX & STRUCTURE
+   ========================================================================== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,26 +8,29 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 header {
     background-color: #0A316C;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    padding: 15px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
-header h1 {
-    color: white;
-    margin: 0;
-    font-size: 20px;
-    font-weight: normal;
+header img {
+    height: 50px;
+    width: auto;
+    justify-self: start;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+    justify-self: center;
 }
 
 header nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-size: 18px; 
 }
 
@@ -32,11 +38,100 @@ header nav a:hover {
     color: #81ECEC;
 }
 
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+    justify-self: end;
+}
 main {
     flex: 1;
     padding: 30px;
 }
 
+footer {
+    background-color: #0A316C;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+footer a:hover {
+    color: #81ECEC;
+}
+
+footer img {
+    height: 45px;
+    width: auto; 
+    margin: 0 20px; 
+}
+
+/* ==========================================================================
+   2. BOUTONS & FORMULAIRES (Général)
+   ========================================================================== */
+input[type="text"], input[type="password"], input[type="date"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* On regroupe tous les boutons principaux pour avoir le même style */
+.btn-valider, #btn-valider, #rdvcoord {
+    background-color: #0A316C;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.btn-valider:hover, #btn-valider:hover, #rdvcoord:hover {
+    background-color: #81ECEC;
+    color: #0A316C;
+}
+
+/* ==========================================================================
+   3. SECTIONS PRINCIPALES (Fonds bleus arrondis)
+   ========================================================================== */
+/* On regroupe les boîtes qui ont le même design */
+#section-rdv, #section-login, #section-admin, #section-affichage {
+    background-color: #c9def5;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#section-rdv h2, #section-login h2, #section-admin h2, #section-affichage h2 {
+    color: #0A316C;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. PAGE ACCUEIL & ÉQUIPE
+   ========================================================================== */
 #debut {
     display: flex;
     justify-content: space-between;
@@ -51,7 +146,7 @@ main {
     margin-right: 40px;
 }
 
-#gauche{
+#gauche {
     width: 50%;
 }
 
@@ -64,7 +159,6 @@ main {
     font-size: 16px;
     line-height: 1.5;
 }
-
 
 #carousel {
     position: relative;
@@ -82,33 +176,334 @@ main {
     display: block;
 }
 
-footer {
-    background-color: #0A316C;
+.about-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.team {
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.left {
+    width: 150px;
+    text-align: center;
+}
+
+.photo {
+    width: 80px;
+    height: 80px;
+    background-color: #5a73b8;
+    margin: auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    padding: 20px 40px;
+    overflow: hidden; 
+    border-radius: 10px; 
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.right {
+    flex: 1;
+    border: 1px solid #5a73b8;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.description {
+    border: 2px solid black;
+    padding: 40px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   5. PAGE RDV (Étudiant & Coordinateur)
+   ========================================================================== */
+.conteneur-rdv {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.zone-formulaire {
+    flex: 1;
+}
+
+.zone-calendrier {
+    flex: 1;
+    background-color: #a8cbf0;
+    border: 1px solid #0A316C;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+#affichage-calendrier {
+    background-color: #ffffff;
+    height: 350px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+#form-rdv fieldset {
+    background-color: #a8cbf0;
+    border: 1px solid #0A316C;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#coordinateur h2 {
+    color: #0A316C;
+    font-size: 32px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+}
+
+/* ==========================================================================
+   6. PAGES ADMIN & LOGIN (Formulaires centraux)
+   ========================================================================== */
+.boite-login, .boite-admin {
+    display: flex;
+    justify-content: center;
+}
+
+.boite-login form fieldset, .boite-admin form fieldset {
+    background-color: #a8cbf0;
+    border: 1px solid #0A316C;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 450px;
+}
+
+.ligne-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer p {
+.ligne-form label {
+    width: 35%;
+    font-weight: bold;
+}
+
+.ligne-form input, .ligne-form select {
+    width: 60%;
+}
+
+/* ==========================================================================
+   7. CALENDRIER DES PERMANENCES (Emploi du temps)
+   ========================================================================== */
+.navigation-semaine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a8cbf0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.navigation-semaine h3 {
     margin: 0;
+    color: #0A316C;
 }
 
-footer a {
+.btn-nav {
+    background-color: #0A316C;
     color: white;
-    text-decoration: none;
-    margin-left: 20px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-footer a:hover {
-    color: #81ECEC;
+.btn-nav:hover {
+    background-color: #81ECEC;
+    color: #0A316C;
 }
-footer img {
-    height: 45px;
-    width: auto; 
-    margin: 0 20px; 
+
+.zone-filtres {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
 }
-footer {
-    margin-top: auto;
+
+.zone-filtres input {
+    flex: 1;
+}
+
+.calendrier-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#emploi-du-temps {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    table-layout: fixed; 
+}
+
+#emploi-du-temps th, #emploi-du-temps td {
+    border: 1px solid #0A316C;
+    padding: 3px;
+    text-align: center;
+    width: 16%;
+    vertical-align: top;
+    height: 40px; 
+    font-size: 13px; 
+}
+
+#emploi-du-temps th {
+    background-color: #0A316C;
+    color: white;
+}
+
+.carte-perm {
+    background-color: #81ECEC;
+    border-left: 4px solid #0A316C;
+    padding: 5px; 
+    font-size: 11px; 
+    border-radius: 4px;
+    text-align: left;
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    overflow: hidden; 
+}
+
+.suite-perm {
+    background-color: #a8cbf0;
+    border-left: 4px solid #4a78c9;
+    color: #333;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (Mobiles & Tablettes)
+   ========================================================================== */
+@media (max-width: 768px) {
+/* Header & Navigation */
+    header {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    header h1 {
+        display: none; 
+    }
+
+    header img {
+        height: 35px;
+        align-self: center; 
+    }
+    
+    header nav {
+        width: 100%;
+        display: flex;
+        overflow-x: auto; 
+        white-space: nowrap;
+        justify-content: center; 
+        padding-bottom: 5px;
+        gap: 15px;
+    }
+
+    header nav a {
+        font-size: 15px;
+    }
+
+    /* Accueil */
+    #debut {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #gauche, #carousel {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #photoacc {
+        margin-top: 20px;
+        margin-right: 0;
+        max-width: 80%;
+    }
+
+    /* RDV */
+    .conteneur-rdv {
+        flex-direction: column;
+    }
+
+    /* Formulaires Admin / Login */
+    .boite-login form fieldset, .boite-admin form fieldset {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .ligne-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ligne-form label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .ligne-form input, .ligne-form select {
+        width: 100%;
+    }
+
+    /* Permanences */
+    .zone-filtres {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navigation-semaine {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    /* Équipe */
+    .member {
+        flex-direction: column;
+    }
+    .right {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    #emploi-du-temps {
+        min-width: 600px;
+    }
 }

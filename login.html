@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Admin - Département Informatique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="haut">
+            <img src="/data/logo.png" alt="Logo" height="50">
+            <h1>Département Informatique</h1>
+        </div>
+        <nav>
+            <a href="accueuil.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="equipe.html">Équipe</a>
+            <a href="rdv.html">RDV</a>
+            <a href="permanences.html">Permanences</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section-login">
+            <h2>Espace Admin - Connexion</h2>
+            <div class="boite-login">
+                <form id="form-login" onsubmit="return false">
+                    <fieldset>
+                        <label>Identifiant : <input type="text" id="username"></label>
+                        <label>Mot de passe : <input type="password" id="password"></label>
+                        <input type="button" value="Se connecter" id="btn-valider" onclick="verifierLogin()">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Département d'informatique</p>
+        <a href="https://www.efrei.fr">
+            <img src="/data/Logo-Efrei-Blanc.png" height="60">
+        </a>
+        <nav>
+            <a href="a-propos.html">À propos</a>
+            <a href="login.html">Admin</a>
+        </nav>
+    </footer>
+
+    <script src="scriptper.js"></script>
+</body>
+
+</html>

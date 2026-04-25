@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Département Informatique</title>
+    <title>Permanences - Département Informatique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <img src="/data/logo.png" alt="Logo" height="60">
+        <img src="/data/logo.png" alt="Logo" height="50">
 
         <nav>
             <a href="accueuil.html">Accueil</a>
@@ -23,17 +23,51 @@
     </header>
 
     <main>
+        <section id="section-affichage">
+            <h2>Emploi du temps des permanences</h2>
+
+            <div class="zone-filtres">
+                <input type="text" id="filtre-matiere" placeholder="Filtrer par matière..." onkeyup="afficherPermanences()">
+                <input type="text" id="filtre-promo" placeholder="Filtrer par promotion..." onkeyup="afficherPermanences()">
+            </div>
+
+            <div class="navigation-semaine">
+                <button class="btn-nav" onclick="changerSemaine(-7)">◄ Semaine précédente</button>
+                <h3 id="titre-semaine">Semaine en cours</h3>
+                <button class="btn-nav" onclick="changerSemaine(7)">Semaine suivante ►</button>
+            </div>
+
+            <div class="calendrier-container">
+                <table id="emploi-du-temps">
+                    <thead>
+                        <tr id="entete-jours">
+                            <th>Heure</th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corps-calendrier">
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>Département d'informatique</p>
-        <img src="/data/logo.png" alt="Logo" height="30">
+        <a href="https://www.efrei.fr">
+            <img src="/data/Logo-Efrei-Blanc.png" height="60">
+        </a>
         <nav>
             <a href="a-propos.html">À propos</a>
-            <a href="admin.html">Admin</a>
+            <a href="login.html">Admin</a>
         </nav>
     </footer>
 
+    <script src="scriptper.js"></script>
 </body>
 
 </html>
