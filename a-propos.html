@@ -79,14 +79,30 @@
     <footer>
         <p>Département d'informatique</p>
         <a href="https://www.efrei.fr">
-        <img src="/data/Logo-Efrei-Blanc.png" height="60">
+            <img src="/data/Logo-Efrei-Blanc.png" height="60">
         </a>
         <nav>
             <a href="a-propos.html">À propos</a>
             <a href="login.html">Admin</a>
         </nav>
     </footer>
+    <div class="chat-toggle" onclick="toggleChat()">
+        💬
+    </div>
 
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            Chatbot EFREI
+            <span onclick="toggleChat()" class="close-btn">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Écrire un message...">
+            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+        </div>
+    </div>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>

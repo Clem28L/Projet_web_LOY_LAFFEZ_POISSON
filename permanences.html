@@ -27,8 +27,10 @@
             <h2>Emploi du temps des permanences</h2>
 
             <div class="zone-filtres">
-                <input type="text" id="filtre-matiere" placeholder="Filtrer par matière..." onkeyup="afficherPermanences()">
-                <input type="text" id="filtre-promo" placeholder="Filtrer par promotion..." onkeyup="afficherPermanences()">
+                <input type="text" id="filtre-matiere" placeholder="Filtrer par matière..."
+                    onkeyup="afficherPermanences()">
+                <input type="text" id="filtre-promo" placeholder="Filtrer par promotion..."
+                    onkeyup="afficherPermanences()">
             </div>
 
             <div class="navigation-semaine">
@@ -68,6 +70,23 @@
     </footer>
 
     <script src="scriptper.js"></script>
+    <div class="chat-toggle" onclick="toggleChat()">
+        💬
+    </div>
+
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            Chatbot EFREI
+            <span onclick="toggleChat()" class="close-btn">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Écrire un message...">
+            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+        </div>
+    </div>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>
