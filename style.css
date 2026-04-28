@@ -178,8 +178,8 @@ input[type="text"], input[type="password"], input[type="date"], select {
 
 .about-container {
     width: 80%;
-    margin: auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 0;
 }
 
 .team {
@@ -227,7 +227,10 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 .description {
-    border: 2px solid black;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     padding: 40px;
     text-align: center;
 }
@@ -511,38 +514,37 @@ input[type="text"], input[type="password"], input[type="date"], select {
 /* ==========================================================================
    PAGE ÉQUIPE GLOBALE (Maquette avec grille et hover)
    ========================================================================== */
-
 #page-equipe-globale {
-    background-color: #D3E0F5; 
+    background-color: #f4f7f6; 
     padding: 0; 
 }
 
-
 .titre-rubrique {
-    background-color: #87A2C7; 
-    padding: 50px 20px;
+    background-color: transparent; 
+    padding: 50px 20px 20px;
     text-align: center;
-    border-bottom: 1px solid #0A316C;
+    border: none;
 }
 
 .titre-rubrique h2 {
     margin: 0;
-    color: #333;
-    font-size: 32px;
-    font-weight: normal;
+    color: #0A316C;
+    font-size: 36px;
+    font-weight: bold;
 }
-
 
 .grille-profs {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    gap: 25px; 
-    padding: 40px;
+    gap: 30px; 
+    padding: 20px 40px 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .carte-prof {
-    background-color: #87A2C7; 
-    border: 2px solid #333;
+    background-color: white; 
+    border: none;
     border-radius: 15px;
     height: 180px;
     position: relative; 
@@ -553,13 +555,19 @@ input[type="text"], input[type="password"], input[type="date"], select {
     justify-content: center;
     text-align: center;
     padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.carte-prof:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
 
 .carte-texte-defaut {
     font-size: 16px;
-    color: #333;
-    transition: opacity 0.3s ; 
+    color: #0A316C;
+    transition: opacity 0.3s; 
 }
 
 .carte-hover-desc {
@@ -575,12 +583,11 @@ input[type="text"], input[type="password"], input[type="date"], select {
     align-items: center;
     justify-content: center;
     opacity: 0; 
-    transition: opacity 0.3s ;
+    transition: opacity 0.3s;
     padding: 15px;
     box-sizing: border-box;
     font-size: 15px;
 }
-
 
 .carte-prof:hover .carte-hover-desc {
     opacity: 1; 
@@ -588,6 +595,29 @@ input[type="text"], input[type="password"], input[type="date"], select {
 
 .carte-prof:hover .carte-texte-defaut {
     opacity: 0; 
+}
+
+@media (max-width: 1000px) {
+    .grille-profs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grille-profs {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    .about-container {
+        width: 95%;
+    }
+}
+.description .btn-valider {
+    display: inline-block;
+    width: auto; 
+    padding: 15px 40px;
+    margin-top: 20px;
+    text-decoration: none; 
 }
 
 /* ==========================================================================
