@@ -1,9 +1,8 @@
 function verifierLogin() {
-    var user = document.getElementById("username").value.trim().toLowerCase();
-    var mdp = document.getElementById("password").value.trim();
+    let utilisateur = document.getElementById("username").value.trim().toLowerCase();
+    let motDePasse = document.getElementById("password").value.trim();
 
-    if (user === "admin" && mdp === "admin") {
-        // Au lieu de changer le style, on redirige directement vers la page admin !
+    if (utilisateur === "admin" && motDePasse === "admin") {
         window.location.href = "admin.html";
     } else {
         alert("Identifiant ou mot de passe incorrect !");
@@ -11,22 +10,26 @@ function verifierLogin() {
 }
 
 function ajouterPermanence() {
-    var matiere = document.getElementById("matiere").value;
-    var prof = document.getElementById("prof").value;
-    var promo = document.getElementById("promo-perm").value;
-    var salle = document.getElementById("salle").value;
-    var datePerm = document.getElementById("date-perm").value;
-    var heure = document.getElementById("heure-perm").value;
-    var duree = document.getElementById("duree-perm").value;
+    let matiere = document.getElementById("matiere").value;
+    let prof = document.getElementById("prof").value;
+    let promo = document.getElementById("promo-perm").value;
+    let salle = document.getElementById("salle").value;
+    let datePerm = document.getElementById("date-perm").value;
+    let heure = document.getElementById("heure-perm").value;
+    let duree = document.getElementById("duree-perm").value;
 
-    if (!matiere || !prof || !promo || !salle || !datePerm) {
+    if (matiere === "" || prof === "" || promo === "" || salle === "" || datePerm === "") {
         alert("Veuillez remplir tous les champs !");
         return;
     }
 
-    var liste = JSON.parse(localStorage.getItem("listePermanences")) || [];
+    let listePermanences = JSON.parse(localStorage.getItem("listePermanences"));
     
-    liste.push({
+    if (listePermanences === null) {
+        listePermanences = [];
+    }
+
+    let nouvellePermanence = {
         matiere: matiere,
         prof: prof,
         promo: promo,
@@ -34,9 +37,11 @@ function ajouterPermanence() {
         date: datePerm,
         heure: heure,
         duree: parseInt(duree)
-    });
+    };
 
-    localStorage.setItem("listePermanences", JSON.stringify(liste));
+    listePermanences.push(nouvellePermanence);
+    localStorage.setItem("listePermanences", JSON.stringify(listePermanences));
+    
     alert("Permanence ajoutée avec succès !");
 
     document.getElementById("matiere").value = "";
@@ -46,108 +51,174 @@ function ajouterPermanence() {
     document.getElementById("date-perm").value = "";
 }
 
-var dateLundi = new Date();
-var jourSemaine = dateLundi.getDay();
-var decalage = jourSemaine === 0 ? -6 : 1 - jourSemaine;
+let dateLundi = new Date();
+let jourSemaine = dateLundi.getDay();
+let decalage;
+
+if (jourSemaine === 0) {
+    decalage = -6;
+} else {
+    decalage = 1 - jourSemaine;
+}
+
 dateLundi.setDate(dateLundi.getDate() + decalage);
 
 function changerSemaine(jours) {
-    dateLundi.setDate(dateLundi.getDate() + jours);
+    let jourActuel = dateLundi.getDate();
+    dateLundi.setDate(jourActuel + jours);
     afficherPermanences();
 }
 
 function formaterDateFR(date) {
-    var j = date.getDate().toString().padStart(2, '0');
-    var m = (date.getMonth() + 1).toString().padStart(2, '0');
-    return j + "/" + m;
+    let jour = date.getDate();
+    let mois = date.getMonth() + 1;
+
+    if (jour < 10) {
+        jour = "0" + jour;
+    }
+    
+    if (mois < 10) {
+        mois = "0" + mois;
+    }
+    
+    return jour + "/" + mois;
 }
 
 function formaterDateISO(date) {
-    var a = date.getFullYear();
-    var m = (date.getMonth() + 1).toString().padStart(2, '0');
-    var j = date.getDate().toString().padStart(2, '0');
-    return a + "-" + m + "-" + j;
+    let annee = date.getFullYear();
+    let mois = date.getMonth() + 1;
+    let jour = date.getDate();
+
+    if (mois < 10) {
+        mois = "0" + mois;
+    }
+    
+    if (jour < 10) {
+        jour = "0" + jour;
+    }
+    
+    return annee + "-" + mois + "-" + jour;
 }
 
 function afficherPermanences() {
-    var corps = document.getElementById("corps-calendrier");
-    var entete = document.getElementById("entete-jours");
-    var titreSemaine = document.getElementById("titre-semaine");
-    if (!corps || !entete) return;
-
-    var joursNom = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
-    var datesSemaineISO = [];
+    let corpsTableau = document.getElementById("corps-calendrier");
+    let enteteTableau = document.getElementById("entete-jours");
+    let titreSemaine = document.getElementById("titre-semaine");
     
-    var htmlEntete = "<th>Heure</th>";
-    for(var i = 0; i < 5; i++) {
-        var d = new Date(dateLundi);
-        d.setDate(d.getDate() + i);
-        datesSemaineISO.push(formaterDateISO(d));
-        htmlEntete += "<th>" + joursNom[i] + " " + formaterDateFR(d) + "</th>";
+    if (corpsTableau === null) {
+        return;
     }
-    entete.innerHTML = htmlEntete;
+    
+    if (enteteTableau === null) {
+        return;
+    }
+
+    let nomsDesJours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
+    let datesDeLaSemaine = [];
+    
+    let htmlEntete = "<th>Heure</th>";
+    
+    for (let i = 0; i < 5; i++) {
+        let jourCalcule = new Date(dateLundi);
+        let jourEnPlus = jourCalcule.getDate() + i;
+        jourCalcule.setDate(jourEnPlus);
+        
+        let dateTexte = formaterDateISO(jourCalcule);
+        datesDeLaSemaine.push(dateTexte);
+        
+        htmlEntete += "<th>" + nomsDesJours[i] + " " + formaterDateFR(jourCalcule) + "</th>";
+    }
+    
+    enteteTableau.innerHTML = htmlEntete;
     titreSemaine.innerHTML = "Semaine du " + formaterDateFR(dateLundi);
 
-    corps.innerHTML = "";
-    var heures = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
+    corpsTableau.innerHTML = "";
+    
+    let heuresListe = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
 
-    heures.forEach(function(h) {
-        var ligne = document.createElement("tr");
-        ligne.innerHTML = "<td>" + h + ":00</td>";
-        for(var i = 0; i < 5; i++) {
-            ligne.innerHTML += "<td id='col-" + i + "-" + h + "'></td>";
+    for (let h = 0; h < heuresListe.length; h++) {
+        let heureActuelle = heuresListe[h];
+        let ligne = document.createElement("tr");
+        ligne.innerHTML = "<td>" + heureActuelle + ":00</td>";
+        
+        for (let j = 0; j < 5; j++) {
+            ligne.innerHTML += "<td id='col-" + j + "-" + heureActuelle + "'></td>";
         }
-        corps.appendChild(ligne);
-    });
+        
+        corpsTableau.appendChild(ligne);
+    }
 
-    var liste = JSON.parse(localStorage.getItem("listePermanences")) || [];
-    var fMatiere = document.getElementById("filtre-matiere").value.toLowerCase();
-    var fPromo = document.getElementById("filtre-promo").value.toLowerCase();
+    let listeDesPermanences = JSON.parse(localStorage.getItem("listePermanences"));
+    
+    if (listeDesPermanences === null) {
+        listeDesPermanences = [];
+    }
 
-    liste.forEach(function(p) {
-        if (p.matiere.toLowerCase().includes(fMatiere) && p.promo.toLowerCase().includes(fPromo)) {
+    let champFiltreMatiere = document.getElementById("filtre-matiere");
+    let filtreMatiere = "";
+    if (champFiltreMatiere !== null) {
+        filtreMatiere = champFiltreMatiere.value.toLowerCase();
+    }
+
+    let champFiltrePromo = document.getElementById("filtre-promo");
+    let filtrePromo = "";
+    if (champFiltrePromo !== null) {
+        filtrePromo = champFiltrePromo.value.toLowerCase();
+    }
+
+    for (let k = 0; k < listeDesPermanences.length; k++) {
+        let permanenceActuelle = listeDesPermanences[k];
+        let matiereMinuscule = permanenceActuelle.matiere.toLowerCase();
+        let promoMinuscule = permanenceActuelle.promo.toLowerCase();
+
+        if (matiereMinuscule.includes(filtreMatiere) && promoMinuscule.includes(filtrePromo)) {
             
-            var indexJour = datesSemaineISO.indexOf(p.date);
+            let positionJour = datesDeLaSemaine.indexOf(permanenceActuelle.date);
             
-            if (indexJour !== -1) {
-                var heureDepart = parseInt(p.heure.split(':')[0]);
-                var heureStr = heureDepart < 10 ? "0" + heureDepart : heureDepart.toString();
+            if (positionJour !== -1) {
+                let heureString = permanenceActuelle.heure.substring(0, 2);
+                let heureNombre = parseInt(heureString);
                 
-                // 1. On trouve la case de départ (ex: Lundi à 10h)
-                var idCelluleDepart = "col-" + indexJour + "-" + heureStr;
-                var celluleDepart = document.getElementById(idCelluleDepart);
+                let idCaseDepart = "col-" + positionJour + "-" + heureString;
+                let caseDepart = document.getElementById(idCaseDepart);
                 
-                if (celluleDepart) {
-                    // 2. MAGIE : On dit à la case de s'étaler sur plusieurs lignes (rowSpan)
-                    celluleDepart.rowSpan = p.duree;
+                if (caseDepart !== null) {
+                    caseDepart.rowSpan = permanenceActuelle.duree;
                     
-                    // 3. On crée le bloc visuel UNE SEULE FOIS
-                    celluleDepart.innerHTML = "<div class='carte-perm'>" + 
-                        "<strong>" + p.matiere + "</strong><br>" +
-                        "Prof: " + p.prof + "<br>" +
-                        "<em>" + p.promo + " (" + p.salle + ")</em>" +
-                        "</div>";
+                    let contenuCarte = "<div class='carte-perm'>";
+                    contenuCarte += "<strong>" + permanenceActuelle.matiere + "</strong><br>";
+                    contenuCarte += "Prof: " + permanenceActuelle.prof + "<br>";
+                    contenuCarte += "<em>" + permanenceActuelle.promo + " (" + permanenceActuelle.salle + ")</em>";
+                    contenuCarte += "</div>";
+                    
+                    caseDepart.innerHTML = contenuCarte;
 
-                    // 4. On cache les cases en dessous qui ont été "absorbées" pour ne pas casser le tableau
-                    for(var i = 1; i < p.duree; i++) {
-                        var heureCourante = heureDepart + i;
-                        var heureSuivanteStr = heureCourante < 10 ? "0" + heureCourante : heureCourante.toString();
+                    for (let increment = 1; increment < permanenceActuelle.duree; increment++) {
+                        let heureACacher = heureNombre + increment;
+                        let heureACacherTexte;
+
+                        if (heureACacher < 10) {
+                            heureACacherTexte = "0" + heureACacher;
+                        } else {
+                            heureACacherTexte = heureACacher.toString();
+                        }
                         
-                        var idCelluleSuivante = "col-" + indexJour + "-" + heureSuivanteStr;
-                        var celluleSuivante = document.getElementById(idCelluleSuivante);
+                        let idCaseACacher = "col-" + positionJour + "-" + heureACacherTexte;
+                        let caseACacher = document.getElementById(idCaseACacher);
                         
-                        if (celluleSuivante) {
-                            celluleSuivante.style.display = "none";
+                        if (caseACacher !== null) {
+                            caseACacher.style.display = "none";
                         }
                     }
                 }
             }
         }
-    });
+    }
 }
 
 window.onload = function() {
-    if (document.getElementById("corps-calendrier")) {
+    let corpsTableau = document.getElementById("corps-calendrier");
+    if (corpsTableau !== null) {
         afficherPermanences();
     }
 };

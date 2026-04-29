@@ -618,6 +618,8 @@ input[type="text"], input[type="password"], input[type="date"], select {
     padding: 15px 40px;
     margin-top: 20px;
     text-decoration: none; 
+
+    
 }
 
 /* ==========================================================================
@@ -739,4 +741,23 @@ input[type="text"], input[type="password"], input[type="date"], select {
 .chat-footer button:hover {
     background-color: #81ECEC;
     color: #0A316C;
+}
+
+
+
+/* Style pour les créneaux occupés dans le calendrier RDV */
+.carte-occupe {
+    background-color: #d1d5db; /* Gris clair */
+    border-left: 4px solid #6b7280; /* Gris foncé */
+    color: #374151;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 11px;
+    border-radius: 4px;
+    text-align: center;
+    height: 100%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }

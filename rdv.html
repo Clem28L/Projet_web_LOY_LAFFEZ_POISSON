@@ -9,10 +9,7 @@
 
 <body>
     <header>
-        <div class="haut">
-            <img src="/data/logo.png" alt="Logo" height="50">
-            <h1>Département Informatique</h1>
-        </div>
+        <img src="/data/logo.png" alt="Logo" height="50">
         <nav>
             <a href="accueuil.html">Accueil</a>
             <a href="formations.html">Formations</a>
@@ -20,42 +17,62 @@
             <a href="rdv.html">RDV</a>
             <a href="permanences.html">Permanences</a>
         </nav>
+        <h1>Département Informatique</h1>
     </header>
 
     <main>
         <section id="section-rdv">
-            <h2>Mon RDV</h2>
+            <h2>Prendre un Rendez-vous</h2>
 
             <div class="conteneur-rdv">
-
                 <div class="zone-formulaire">
                     <form id="form-rdv" onsubmit="return false">
                         <fieldset>
                             <label>Nom : <input type="text" id="nom"></label>
-                            <label>Prenom : <input type="text" id="prenom"></label>
+                            <label>Prénom : <input type="text" id="prenom"></label>
                             <label>Promo : <input type="text" id="promo"></label>
-
                             <label>Date : <input type="date" id="date-rdv"></label>
                             <label>Heure :
                                 <select id="heure-rdv">
                                     <option value="">-- Choisir --</option>
+                                    <option value="08:00">08:00</option>
                                     <option value="09:00">09:00</option>
                                     <option value="10:00">10:00</option>
                                     <option value="11:00">11:00</option>
                                     <option value="14:00">14:00</option>
                                     <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
                                 </select>
                             </label>
-
                             <label>Demande particulière : <input type="text" id="demande"></label>
-                            <input type="button" value="Prendre RDV" id="btn-valider" onclick="validerRDV()">
+                            <input type="button" value="Prendre RDV" class="btn-valider" onclick="validerRDV()">
                         </fieldset>
                     </form>
                 </div>
 
                 <div class="zone-calendrier">
-                    <h3>Calendrier du coordinateur</h3>
-                    <div id="affichage-calendrier">
+                    <div class="navigation-semaine">
+                        <button class="btn-nav" onclick="changerSemaineRDV(-7)">◄ Précédent</button>
+                        <h3 id="titre-semaine-rdv">Semaine en cours</h3>
+                        <button class="btn-nav" onclick="changerSemaineRDV(7)">Suivant ►</button>
+                    </div>
+
+                    <div class="calendrier-container">
+                        <table id="emploi-du-temps">
+                            <thead>
+                                <tr id="entete-jours-rdv">
+                                    <th>Heure</th>
+                                    <th>Lundi</th>
+                                    <th>Mardi</th>
+                                    <th>Mercredi</th>
+                                    <th>Jeudi</th>
+                                    <th>Vendredi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corps-calendrier-rdv">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -66,7 +83,7 @@
     <footer>
         <p>Département d'informatique</p>
         <a href="https://www.efrei.fr">
-            <img src="/data/Logo-Efrei-Blanc.png" height="60">
+            <img src="/data/Logo-Efrei-Blanc.png" height="60" alt="Logo Efrei">
         </a>
         <nav>
             <a href="a-propos.html">À propos</a>
@@ -74,23 +91,20 @@
         </nav>
     </footer>
 
-    <script src="scriptrdv.js"></script>
-    <div class="chat-toggle" onclick="toggleChat()">
-        💬
-    </div>
-
+    <div class="chat-toggle" onclick="toggleChat()">💬</div>
     <div class="chatbox" id="chatbox">
         <div class="chat-header">
             Chatbot EFREI
             <span onclick="toggleChat()" class="close-btn">✖</span>
         </div>
-        <div class="chat-body" id="chat-body">
-        </div>
+        <div class="chat-body" id="chat-body"></div>
         <div class="chat-footer">
             <input type="text" id="chat-input" placeholder="Écrire un message...">
-            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+            <button id="btn-envoyer-chat" onclick="lireFichierJSONEtRepondre('intents.json')">Envoyer</button>
         </div>
     </div>
+
+    <script src="scriptrdv.js"></script>
     <script src="chatbot.js"></script>
 </body>
 
