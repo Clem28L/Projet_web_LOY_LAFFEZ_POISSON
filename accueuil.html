@@ -23,12 +23,22 @@
     </header>
     <section id="debut">
         <div id="gauche">
-            <h2>Bienvenue sur le site du département d'informatique de l'Efrei Paris !</h2>
+            <h2>Bienvenue au département informatique de l’EFREI Paris</h2>
+
             <p>
-                Rejoignez une formation d’excellence au cœur de l’innovation numérique.
-                Développez vos compétences, travaillez sur des projets concrets et préparez-vous aux métiers de demain.
+                Le département informatique de l’EFREI Paris forme des ingénieurs et experts du numérique capables de
+                relever les défis technologiques d’aujourd’hui et de demain.
+                Grâce à une pédagogie axée sur la pratique, vous développerez des compétences solides en développement,
+                intelligence artificielle, cybersécurité et systèmes informatiques.
             </p>
-            <p>Construisez votre avenir dans l’informatique</p>
+
+            <p>
+                Tout au long de votre parcours, vous serez amené à travailler sur des projets concrets, en collaboration
+                avec des entreprises partenaires, afin de vous préparer efficacement au monde professionnel.
+            </p>
+
+            <p><strong>Rejoignez une formation d’excellence et construisez votre avenir dans l’informatique.</strong>
+            </p>
         </div>
         <div id="carousel">
             <img src="/data/img1.jpg" class="active">
@@ -42,47 +52,81 @@
         <button id="rdvcoord" onclick="window.location.href='rdv.html'">Prendre rendez-vous</button>
     </section>
     <section id="actu">
-        <h2>Les Actualités</h2>
+        <h2>Actualités</h2>
 
-        <footer>
-            <p>© 2025 Département Informatique — EFREI Paris</p>
-            <a href="https://www.efrei.fr">
-                <img src="/data/Logo-Efrei-Blanc.png" alt="Logo EFREI" height="36">
-            </a>
-            <div class="footer-liens">
-                <a href="a-propos.html">À propos</a>
-                <a href="login.html">Admin</a>
-            </div>
-        </footer>
-        <div class="chat-toggle" onclick="toggleChat()">
-            💬
-        </div>
+        <div class="actu-container">
 
-        <div class="chatbox" id="chatbox">
-            <div class="chat-header">
-                Chatbot EFREI
-                <span onclick="toggleChat()" class="close-btn">✖</span>
+            <div class="actu-card">
+                <img src="/data/cybernight.jpeg" alt="Actualité 1">
+                <h3>Hackathon EFREI 2025</h3>
+                <p>Les étudiants relèvent des défis tech pendant 48h pour créer des projets innovants.</p>
             </div>
-            <div class="chat-body" id="chat-body">
+
+            <div class="actu-card">
+                <img src="/data/cours_ia.jpeg" alt="Actualité 2">
+                <h3>Nouveaux cours IA</h3>
+                <p>Introduction de modules avancés en intelligence artificielle et machine learning.</p>
             </div>
-            <div class="chat-footer">
-                <input type="text" id="chat-input" placeholder="Écrire un message...">
-                <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+
+            <div class="actu-card">
+                <img src="/data/stage.jpeg" alt="Actualité 3">
+                <h3>Stage & entreprises</h3>
+                <p>De nombreux étudiants intègrent des entreprises partenaires pour leurs stages.</p>
             </div>
+
         </div>
-        <script src="chatbot.js"></script>
+    </section>
+
+    <section id="decouverte">
+        <h2>Découvrir le département d'informatique</h2>
+
+        <div class="decouverte-container">
+            <a href="permanences.html" class="btn-decouverte">Les permanences</a>
+            <a href="equipe.html" class="btn-decouverte">L’équipe enseignante</a>
+            <a href="formations.html" class="btn-decouverte">Cours et domaines d’expertise</a>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Département Informatique — EFREI Paris</p>
+        <a href="https://www.efrei.fr">
+            <img src="/data/Logo-Efrei-Blanc.png" alt="Logo EFREI" height="36">
+        </a>
+        <div class="footer-liens">
+            <a href="a-propos.html">À propos</a>
+            <a href="login.html">Admin</a>
+        </div>
+    </footer>
+    <div class="chat-toggle" onclick="toggleChat()">
+        💬
+    </div>
+
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            Chatbot EFREI
+            <span onclick="toggleChat()" class="close-btn">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Écrire un message...">
+            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+        </div>
+    </div>
+    <script src="chatbot.js"></script>
 </body>
 <script>
-    let index = 0;
-    const images = document.querySelectorAll("#carousel img");
+    document.addEventListener("DOMContentLoaded", () => {
+        let index = 0;
+        const images = document.querySelectorAll("#carousel img");
 
-    function changeImage() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
-    }
+        function changeImage() {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }
 
-    setInterval(changeImage, 3000);
+        setInterval(changeImage, 5000);
+    });
 </script>
 
 </html>
