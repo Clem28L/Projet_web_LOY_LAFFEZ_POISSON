@@ -109,6 +109,87 @@ input[type="text"], input[type="password"], input[type="date"], select {
     box-sizing: border-box;
 }
 
+.btn-rdv {
+    background-color: #0A316C;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 0;
+    display: inline-block; 
+    width: auto; 
+}
+
+.btn-rdv:hover {
+    background-color: #81ECEC;
+    color: #0A316C;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+#coordinateur {
+    padding-left: 20px; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px;       
+    height: 40px;
+
+    background-color: rgba(10, 49, 108, 0.6);
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 18px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 10;
+
+    transition: all 0.2s ease;
+
+    line-height: 1; 
+    font-weight: bold;
+}
+
+
+.carousel-btn:hover {
+    background-color: #81ECEC;
+    color: #0A316C;
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0 ;
+}
+
+.carousel-btn.left,
+.carousel-btn.right {
+    aspect-ratio: 1 / 1; 
+}
+
 /* On regroupe tous les boutons principaux pour avoir le même style */
 .btn-valider, #btn-valider, #rdvcoord {
     background-color: #0A316C;
@@ -888,4 +969,39 @@ input[type="text"], input[type="password"], input[type="date"], select {
     display: flex;
     flex-direction: column;
     justify-content: center; 
+}
+
+/* ==========================================================================
+   BOUTONS DE CARROUSEL (Accueil)
+   ========================================================================== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px ;
+    height: 40px ;
+
+    min-width: 40px;
+    min-height: 40px;
+
+    padding: 0 ;
+
+    background-color: rgba(10, 49, 108, 0.6);
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 10;
+
+    flex: none; 
 }

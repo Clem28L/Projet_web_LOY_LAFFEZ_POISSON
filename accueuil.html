@@ -41,15 +41,19 @@
             </p>
         </div>
         <div id="carousel">
+            <button class="carousel-btn left" onclick="prevImage()">‹</button>
+
             <img src="/data/img1.jpg" class="active">
             <img src="/data/img2.jpg">
             <img src="/data/img3.jpg">
+
+            <button class="carousel-btn right" onclick="nextImage()">›</button>
         </div>
 
     </section>
     <section id="coordinateur">
         <h2>Prendre rendez-vous avec un coordinateur</h2>
-        <button id="rdvcoord" onclick="window.location.href='rdv.html'">Prendre rendez-vous</button>
+        <button class="btn-rdv" onclick="window.location.href='rdv.html'">Prendre rendez-vous</button>
     </section>
     <section id="actu">
         <h2>Actualités</h2>
@@ -119,13 +123,26 @@
         let index = 0;
         const images = document.querySelectorAll("#carousel img");
 
-        function changeImage() {
-            images[index].classList.remove("active");
-            index = (index + 1) % images.length;
-            images[index].classList.add("active");
+        function showImage(i) {
+            images.forEach(img => img.classList.remove("active"));
+            images[i].classList.add("active");
         }
 
-        setInterval(changeImage, 5000);
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage(index);
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        }
+
+        setInterval(nextImage, 5000);
+
+
+        window.nextImage = nextImage;
+        window.prevImage = prevImage;
     });
 </script>
 
