@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Département Informatique</title>
+    <title>À propos - Département Informatique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,13 +15,11 @@
         </div>
         <nav>
             <a href="accueuil.html">Accueil</a>
-            <a href="formations.html">Formations</a>
             <a href="equipe.html">Équipe</a>
             <a href="rdv.html">RDV</a>
             <a href="permanences.html">Permanences</a>
         </nav>
     </header>
-
 
     <main class="about-container">
 
@@ -35,7 +33,14 @@
                     <p>Clément LOY</p>
                 </div>
                 <div class="right">
-                    <p>Tâches réalisées</p>
+                    <p><strong>Tâches réalisées :</strong></p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Création de la page de rendez-vous et intégration du tableau RDV.</li>
+                        <li>Changement et refonte de la navigation (Header et Footer).</li>
+                        <li>Amélioration et simplification globale du JavaScript du Chatbot.</li>
+                        <li>Mise en place de la page admin pour mettre en place des permanences.</li>
+                        <li>Mise en place de la page des permanences.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -47,7 +52,14 @@
                     <p>Nathan LAFFEZ</p>
                 </div>
                 <div class="right">
-                    <p>Tâches réalisées</p>
+                    <p><strong>Tâches réalisées :</strong></p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Création de la base de la page d'accueil et du carrousel d'images.</li>
+                        <li>Développement de la page présentant l'équipe enseignante EFREI.</li>
+                        <li>Mise en place de l'interface et de la structure de base du Chatbot.</li>
+                        <li>Création de l'arborescence des fichiers et gestion des premières couleurs.</li>
+                        <li>Finalisation de la page "À propos".</li>
+                    </ul>
                 </div>
             </div>
 
@@ -59,25 +71,73 @@
                     <p>Mathis POISSON</p>
                 </div>
                 <div class="right">
-                    <p>Tâches réalisées</p>
+                    <p><strong>Tâches réalisées :</strong></p>
+                    <ul style="text-align: left; padding-left: 20px;">
+                        <li>Amélioration globale du design et de l'ergonomie de l'accueil.</li>
+                        <li>Ajout de l'interactivité (flèches de navigation) sur le carrousel.</li>
+                        <li>Intégration et gestion des photos des membres de l'équipe.</li>
+                        <li>Mise à jour et structuration de la page "À propos".</li>
+                    </ul>
                 </div>
             </div>
 
         </section>
 
-        <section class="description">
-            <p>
-                Description du site <br>
-                Fonctionnalités <br>
-                Outils utilisés
-            </p>
+        <!-- Nouvelle section description sur-mesure et bien alignée -->
+        <section class="description-projet">
+            <div class="readme-card">
+
+                <h2>📖 À propos du projet</h2>
+
+                <p class="intro-text">
+                    Développé dans le cadre de notre cursus à l'<strong>EFREI Paris</strong>, ce portail web interactif
+                    a été conçu pour moderniser et centraliser la communication du Département Informatique. Notre
+                    objectif principal est d'offrir aux étudiants une plateforme centralisée, fluide et intuitive,
+                    permettant de trouver instantanément les informations pédagogiques essentielles et de faciliter la
+                    prise de contact avec les enseignants.
+                </p>
+
+                <h3>🚀 Fonctionnalités Clés</h3>
+                <ul class="feature-list">
+                    <li><strong>Assistant Virtuel Autonome (Chatbot) :</strong> Un agent conversationnel dynamique
+                        développé en JavaScript, capable de détecter des mots-clés et d'orienter les étudiants. Il
+                        intègre un système de sauvegarde de session (SessionStorage) pour ne pas perdre l'historique
+                        lors de la navigation.</li>
+                    <li><strong>Système de Planification de Rendez-vous :</strong> Une interface dédiée avec calendrier
+                        permettant aux étudiants de formuler des demandes d'entrevues avec le corps professoral ou le
+                        coordinateur du département.</li>
+                    <li><strong>Tableau de Bord des Permanences :</strong> Un espace recensant de manière claire et
+                        organisée les horaires de disponibilité de l'équipe pédagogique pour un accompagnement optimal.
+                    </li>
+                    <li><strong>Carrousel d'Actualités Interactif :</strong> Une page d'accueil animée permettant de
+                        mettre en valeur les dernières nouveautés et annonces importantes de l'école.</li>
+                    <li><strong>Trombinoscope Dynamique :</strong> Une présentation visuelle de l'équipe enseignante,
+                        intégrant des effets de survol pour dévoiler les domaines d'expertise de chaque professeur.</li>
+                </ul>
+
+                <h3>🛠️ Architecture & Technologies</h3>
+                <ul class="feature-list no-margin-bottom">
+                    <li><strong>HTML5 Sémantique :</strong> Pour une structure claire, accessible et optimisée pour les
+                        navigateurs modernes.</li>
+                    <li><strong>CSS3 Avancé :</strong> Utilisation de modèles de mise en page flexibles (Flexbox, Grid),
+                        d'animations de transition et d'effets de survol (Hover) pour une expérience utilisateur
+                        enrichie.</li>
+                    <li><strong>JavaScript (Vanilla) :</strong> Programmation orientée objet pour la gestion de
+                        l'historique du chat, requêtes asynchrones (Fetch API) pour la lecture de données, et
+                        manipulation du DOM en temps réel.</li>
+                    <li><strong>Base de données JSON :</strong> Architecture légère pour le stockage structuré des
+                        intentions et des réponses du chatbot intelligent.</li>
+                    <li><strong>Git & GitHub :</strong> Déploiement d'un workflow collaboratif (gestion des branches,
+                        pull requests et fusion) pour un développement en équipe efficace et sécurisé.</li>
+                </ul>
+
+            </div>
         </section>
 
     </main>
 
-
     <footer>
-        <p>© 2025 Département Informatique — EFREI Paris</p>
+        <p>© 2026 Département Informatique — EFREI Paris</p>
         <a href="https://www.efrei.fr">
             <img src="/data/Logo-Efrei-Blanc.png" alt="Logo EFREI" height="36">
         </a>
@@ -86,6 +146,8 @@
             <a href="login.html">Admin</a>
         </div>
     </footer>
+
+    <!-- Boton et Boîte de dialogue du Chatbot -->
     <div class="chat-toggle" onclick="toggleChat()">
         💬
     </div>
@@ -102,6 +164,7 @@
             <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
         </div>
     </div>
+
     <script src="chatbot.js"></script>
 </body>
 

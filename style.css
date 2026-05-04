@@ -98,7 +98,7 @@ footer img:hover {
 }
 
 /* ==========================================================================
-   2. BOUTONS & FORMULAIRES (Général)
+   2. BOUTONS & FORMULAIRES 
    ========================================================================== */
 input[type="text"], input[type="password"], input[type="date"], select {
     padding: 10px;
@@ -190,7 +190,6 @@ input[type="text"], input[type="password"], input[type="date"], select {
     aspect-ratio: 1 / 1; 
 }
 
-/* On regroupe tous les boutons principaux pour avoir le même style */
 .btn-valider, #btn-valider, #rdvcoord {
     background-color: #0A316C;
     color: white;
@@ -211,9 +210,8 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   3. SECTIONS PRINCIPALES (Fonds bleus arrondis)
+   3. SECTIONS PRINCIPALES 
    ========================================================================== */
-/* On regroupe les boîtes qui ont le même design */
 #section-rdv, #section-login, #section-admin, #section-affichage {
     background-color: #c9def5;
     padding: 40px;
@@ -445,7 +443,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   5. PAGE RDV (Étudiant & Coordinateur)
+   5. PAGE RDV 
    ========================================================================== */
 .conteneur-rdv {
     display: flex;
@@ -494,7 +492,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   6. PAGES ADMIN & LOGIN (Formulaires centraux)
+   6. PAGES ADMIN & LOGIN 
    ========================================================================== */
 .boite-login, .boite-admin {
     display: flex;
@@ -721,7 +719,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   PAGE ÉQUIPE GLOBALE (Maquette avec grille et hover)
+   PAGE ÉQUIPE GLOBALE 
    ========================================================================== */
 #page-equipe-globale {
     background-color: #f4f7f6; 
@@ -1004,4 +1002,59 @@ input[type="text"], input[type="password"], input[type="date"], select {
     z-index: 10;
 
     flex: none; 
+}
+
+
+/* ==========================================================================
+    À PROPOS 
+   ========================================================================== */
+
+.description-projet {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.readme-card {
+    background-color: #f8f9fa;
+    border: 2px solid #d0d7de;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: left;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.readme-card h2 {
+    color: #0A316C;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 32px;
+    border-bottom: 2px solid #81ECEC;
+    padding-bottom: 10px;
+}
+
+.readme-card .intro-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.readme-card h3 {
+    color: #0A316C;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.readme-card .feature-list {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 35px;
+    padding-left: 25px;
+}
+
+.readme-card .no-margin-bottom {
+    margin-bottom: 0;
 }
