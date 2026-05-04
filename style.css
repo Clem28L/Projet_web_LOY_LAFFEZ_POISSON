@@ -1047,14 +1047,10 @@ input[type="text"], input[type="password"], input[type="date"], select {
     margin-bottom: 15px;
 }
 
-.readme-card .feature-list {
+.readme-card .liste-readme {
     font-size: 15px;
     line-height: 1.8;
     color: #444;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     padding-left: 25px;
-}
-
-.readme-card .no-margin-bottom {
-    margin-bottom: 0;
 }
