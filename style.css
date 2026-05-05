@@ -232,28 +232,37 @@ input[type="text"], input[type="password"], input[type="date"], select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
-}
-
-#photoacc {
-    max-width: 40%;
-    height: auto;
-    margin-top: 90px;   
-    margin-right: 40px;
+    padding: 0 5%;
+    min-height: calc(100vh - 87px); 
+    background-color: #e6f0ff; 
+    
 }
 
 #gauche {
-    width: 50%;
+    width: 45%;
 }
 
 #gauche h2 {
-    margin-bottom: 15px;
-    font-size: 28px;
+    margin-bottom: 25px;
+    font-size: 46px; 
+    line-height: 1.2;
+    color: #0A316C; 
 }
 
 #gauche p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px; 
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444444; 
+}
+
+#gauche strong {
+    color: #0A316C; 
+    font-size: 20px;
+    display: block;
+    margin-top: 30px;
+    border-left: 5px solid #81ECEC; 
+    padding-left: 15px;
 }
 
 #carousel {
@@ -655,10 +664,22 @@ input[type="text"], input[type="password"], input[type="date"], select {
     #debut {
         flex-direction: column;
         text-align: center;
+        padding: 50px 20px;
+        min-height: auto; 
     }
 
-    #gauche, #carousel {
+    #gauche {
         width: 100%;
+        margin-bottom: 40px;
+    }
+
+    #gauche h2 {
+        font-size: 32px; 
+    }
+
+    #carousel {
+        width: 100%;
+        height: 250px; 
         margin-right: 0;
     }
 
