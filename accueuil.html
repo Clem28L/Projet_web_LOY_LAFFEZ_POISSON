@@ -84,6 +84,49 @@
         </div>
     </section>
 
+    <section id="quiz">
+        <h2>Quel domaine de l’informatique est fait pour vous ?</h2>
+
+        <div id="quiz-container">
+
+            <div class="question active">
+                <p>1. Quand tu travailles sur un projet, tu préfères :</p>
+                <button onclick="answer({dev:2, data:1})">Construire une solution étape par étape</button>
+                <button onclick="answer({data:2, dev:1})">Analyser et comprendre des données</button>
+                <button onclick="answer({cyber:2})">Tester la sécurité et chercher des failles</button>
+                <button onclick="answer({reseau:2})">Organiser des systèmes complexes</button>
+            </div>
+
+            <div class="question">
+                <p>2. Ce qui te motive le plus :</p>
+                <button onclick="answer({dev:2})">Créer des applications utiles</button>
+                <button onclick="answer({data:2})">Extraire de la valeur des données</button>
+                <button onclick="answer({cyber:2})">Protéger des systèmes critiques</button>
+                <button onclick="answer({embarque:2})">Travailler avec du matériel concret</button>
+            </div>
+
+            <div class="question">
+                <p>3. Tu préfères :</p>
+                <button onclick="answer({data:2})">Résoudre des problèmes mathématiques</button>
+                <button onclick="answer({dev:2})">Créer des interfaces</button>
+                <button onclick="answer({cyber:2})">Comprendre comment attaquer un système</button>
+                <button onclick="answer({reseau:2})">Optimiser des infrastructures</button>
+            </div>
+
+            <div class="question">
+                <p>4. Ton environnement idéal :</p>
+                <button onclick="answer({dev:2})">Startup tech</button>
+                <button onclick="answer({data:2})">Lab d’innovation</button>
+                <button onclick="answer({cyber:2})">Centre de sécurité</button>
+                <button onclick="answer({embarque:2})">Industrie / robotique</button>
+            </div>
+            <div id="result" style="display:none;"></div>
+
+
+
+        </div>
+    </section>
+
     <section id="decouverte">
         <h2>Découvrir le département d'informatique</h2>
 
@@ -120,6 +163,7 @@
         </div>
     </div>
     <script src="chatbot.js"></script>
+    <script src="scriptrdv.js"></script>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {

@@ -171,3 +171,89 @@ function validerRDV() {
 }
 
 window.addEventListener("load", afficherCalendrierRDV);
+// ===== QUIZ INTERACTIF =====
+
+let currentQuestion = 0;
+
+let scores = {
+    dev: 0,
+    data: 0,
+    cyber: 0,
+    reseau: 0,
+    embarque: 0
+};
+
+function answer(points) {
+
+    // Ajouter les points
+    for (let key in points) {
+        scores[key] += points[key];
+    }
+
+    const questions = document.querySelectorAll(".question");
+
+    // cacher question actuelle
+    questions[currentQuestion].classList.remove("active");
+
+    currentQuestion++;
+
+    // afficher suivante OU résultat
+    if (currentQuestion < questions.length) {
+        questions[currentQuestion].classList.add("active");
+    } else {
+        showResult();
+    }
+}
+
+function showResult() {
+
+    document.getElementById("result").style.display = "block";
+
+    let max = Math.max(...Object.values(scores));
+    let results = [];
+
+    for (let key in scores) {
+        if (scores[key] === max) {
+            results.push(key);
+        }
+    }
+
+    const correspondance = {
+        dev: "Software Engineering",
+        data: "Data Science",
+        cyber: "Cybersécurité",
+        reseau: "Réseaux & Cloud",
+        embarque: "Systèmes embarqués"
+    };
+
+    document.getElementById("result").innerHTML = `
+        <h3>🎯 Résultat du quiz</h3>
+        <p>Voici ce qui te correspond le mieux :</p>
+        <ul>
+            ${results.map(r => `<li><strong>${correspondance[r]}</strong></li>`).join("")}
+        </ul>
+
+        <button class="btn-restart" onclick="restartQuiz()">Recommencer</button>
+    `;
+}
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    // reset scores
+    for (let key in scores) {
+        scores[key] = 0;
+    }
+
+    const questions = document.querySelectorAll(".question");
+
+    // cacher toutes
+    questions.forEach(q => q.classList.remove("active"));
+
+    // afficher la première
+    questions[0].classList.add("active");
+
+    // cacher résultat
+    document.getElementById("result").style.display = "none";
+}
