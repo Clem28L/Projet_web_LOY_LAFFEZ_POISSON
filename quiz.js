@@ -11,31 +11,27 @@ let scores = {
 const profils = {
     dev: {
         titre: "Développement logiciel",
-        emoji: "💻",
+        
         description: "Vous aimez transformer des idées en applications concrètes, utiles et bien construites.",
         majeures: ["Software Engineering", "Digital Transformation", "IT for Finance"]
     },
     data: {
         titre: "Data & Intelligence Artificielle",
-        emoji: "📊",
         description: "Vous aimez analyser, comprendre et exploiter les données pour prendre de meilleures décisions.",
         majeures: ["Big Data & Machine Learning", "Business Intelligence & Analytics", "Bio-informatique"]
     },
     cyber: {
         titre: "Cybersécurité",
-        emoji: "🔐",
         description: "Vous êtes attiré par la protection des systèmes, l’analyse des risques et la défense numérique.",
         majeures: ["Cybersécurité, SI & Gouvernance", "Cybersécurité, Infrastructure & Logiciels"]
     },
     reseau: {
         titre: "Réseaux & Cloud",
-        emoji: "🌐",
         description: "Vous aimez comprendre comment les systèmes communiquent et comment garder une infrastructure stable.",
         majeures: ["Networks & Cloud Infrastructure", "Sécurité & Réseaux"]
     },
     embarque: {
         titre: "Systèmes embarqués & Robotique",
-        emoji: "🤖",
         description: "Vous aimez relier informatique, objets physiques, capteurs, robots et systèmes intelligents.",
         majeures: ["Systèmes embarqués", "Systèmes robotiques & drones", "Transports intelligents"]
     }
@@ -76,7 +72,7 @@ function showResult() {
     restartBtn.style.display = "inline-block";
 
     resultDiv.innerHTML = `
-        <h2>${profilPrincipal.emoji} ${profilPrincipal.titre}</h2>
+        <h2> ${profilPrincipal.titre}</h2>
 
         <p>${profilPrincipal.description}</p>
 
