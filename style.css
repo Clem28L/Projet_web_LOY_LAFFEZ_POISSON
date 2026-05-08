@@ -1388,3 +1388,32 @@ input[type="text"], input[type="password"], input[type="date"], select {
         font-size: 15px;
     }
 }
+
+
+/* ==========================================================================
+   CARTE
+   ========================================================================== */
+#localisation {
+    text-align: center;
+    padding: 20px 40px 50px 40px;
+}
+
+#localisation h2 {
+    color: #0A316C;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.map-container iframe {
+    border: 1px solid #0A316C;
+    width: 100%;
+    height: 400px;
+    max-width: 1000px;
+    border-radius: 15px;
+}
