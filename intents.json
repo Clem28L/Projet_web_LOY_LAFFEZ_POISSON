@@ -13,7 +13,7 @@
     {
       "tag": "equipe_generale",
       "patterns": ["qui est l'equipe", "professeurs", "qui sont les profs", "enseignants", "membres", "equipe"],
-      "responses": ["Notre équipe est composée de professeurs permanents et d'enseignants-chercheurs experts dans leurs domaines (IA, Cyber, Réseaux...). Consultez la rubrique 'Équipe' pour tous les découvrir !"]
+      "responses": ["Notre équipe est composée de professeurs permanents et d'enseignants-chercheurs experts dans leurs domaines (IA, Cyber, Réseaux...). Consultez la rubrique <a href='equipe.html' style='color: #0A316C; font-weight: bold; text-decoration: underline;'>Équipe</a> pour tous les découvrir !"]
     },
     {
       "tag": "prof_asma_gabis",
