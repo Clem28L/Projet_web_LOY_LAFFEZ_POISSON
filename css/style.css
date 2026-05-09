@@ -53,7 +53,11 @@ main {
     flex: 1;
     padding: 30px;
 }
-
+.chat-img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
 footer {
     background: #0A316C;
     padding: 24px 40px;

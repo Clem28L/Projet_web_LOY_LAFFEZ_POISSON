@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Espace Admin - Département Informatique</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -93,9 +93,9 @@
         </div>
     </footer>
 
-    <script src="scriptper.js"></script>
+    <script src="../js/scriptper.js"></script>
     <div class="chat-toggle" onclick="toggleChat()">
-        💬
+        <img src="../data/chatbot.png" alt="Ouvrir le chat" class="chat-img">
     </div>
 
     <div class="chatbox" id="chatbox">
@@ -110,7 +110,7 @@
             <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
         </div>
     </div>
-    <script src="chatbot.js"></script>
+    <script src="../js/chatbot.js"></script>
 </body>
 
 </html>

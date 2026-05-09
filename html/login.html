@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Accueil - Département Informatique</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Connexion Admin - Département Informatique</title>
+    <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -26,7 +26,20 @@
     </header>
 
     <main>
+        <section id="section-login">
+            <h2>Espace Admin - Connexion</h2>
+            <div class="boite-login">
+                <form id="form-login" onsubmit="return false">
+                    <fieldset>
+                        <label>Identifiant : <input type="text" id="username"></label>
+                        <label>Mot de passe : <input type="password" id="password"></label>
+                        <input type="button" value="Se connecter" id="btn-valider" onclick="verifierLogin()">
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </main>
+
     <footer>
         <p>© 2025 Département Informatique — EFREI Paris</p>
         <a href="https://www.efrei.fr">
@@ -37,8 +50,10 @@
             <a href="login.html">Admin</a>
         </div>
     </footer>
+
+    <script src="../js/scriptper.js"></script>
     <div class="chat-toggle" onclick="toggleChat()">
-        💬
+        <img src="../data/chatbot.png" alt="Ouvrir le chat" class="chat-img">
     </div>
 
     <div class="chatbox" id="chatbox">
@@ -53,7 +68,7 @@
             <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
         </div>
     </div>
-    <script src="chatbot.js"></script>
+    <script src="../js/chatbot.js"></script>
 </body>
 
 </html>

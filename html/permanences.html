@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Connexion Admin - Département Informatique</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Permanences - Département Informatique</title>
+    <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -26,16 +26,37 @@
     </header>
 
     <main>
-        <section id="section-login">
-            <h2>Espace Admin - Connexion</h2>
-            <div class="boite-login">
-                <form id="form-login" onsubmit="return false">
-                    <fieldset>
-                        <label>Identifiant : <input type="text" id="username"></label>
-                        <label>Mot de passe : <input type="password" id="password"></label>
-                        <input type="button" value="Se connecter" id="btn-valider" onclick="verifierLogin()">
-                    </fieldset>
-                </form>
+        <section id="section-affichage">
+            <h2>Emploi du temps des permanences</h2>
+
+            <div class="zone-filtres">
+                <input type="text" id="filtre-matiere" placeholder="Filtrer par matière..."
+                    onkeyup="afficherPermanences()">
+                <input type="text" id="filtre-promo" placeholder="Filtrer par promotion..."
+                    onkeyup="afficherPermanences()">
+            </div>
+
+            <div class="navigation-semaine">
+                <button class="btn-nav" onclick="changerSemaine(-7)">◄ Semaine précédente</button>
+                <h3 id="titre-semaine">Semaine en cours</h3>
+                <button class="btn-nav" onclick="changerSemaine(7)">Semaine suivante ►</button>
+            </div>
+
+            <div class="calendrier-container">
+                <table id="emploi-du-temps">
+                    <thead>
+                        <tr id="entete-jours">
+                            <th>Heure</th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corps-calendrier">
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
@@ -51,9 +72,9 @@
         </div>
     </footer>
 
-    <script src="scriptper.js"></script>
+    <script src="../js/scriptper.js"></script>
     <div class="chat-toggle" onclick="toggleChat()">
-        💬
+        <img src="../data/chatbot.png" alt="Ouvrir le chat" class="chat-img">
     </div>
 
     <div class="chatbox" id="chatbox">
@@ -68,7 +89,7 @@
             <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
         </div>
     </div>
-    <script src="chatbot.js"></script>
+    <script src="../js/chatbot.js"></script>
 </body>
 
 </html>

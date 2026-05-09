@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quiz - Département Informatique</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -189,8 +189,24 @@
         <a href="login.html">Admin</a>
     </div>
 </footer>
+<div class="chat-toggle" onclick="toggleChat()">
+        <img src="../data/chatbot.png" alt="Ouvrir le chat" class="chat-img">
+    </div>
 
-    <script src="quiz.js"></script>
+    <div class="chatbox" id="chatbox">
+        <div class="chat-header">
+            Chatbot EFREI
+            <span onclick="toggleChat()" class="close-btn">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Écrire un message...">
+            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+        </div>
+    </div>
+    <script src="../js/chatbot.js"></script>
+    <script src="../js/quiz.js"></script>
 
 </body>
 
