@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. STYLES GLOBAUX & STRUCTURE
+STYLES GLOBAUX 
    ========================================================================== */
 body {
     margin: 0;
@@ -98,7 +98,7 @@ footer img:hover {
 }
 
 /* ==========================================================================
-   2. BOUTONS & FORMULAIRES 
+BOUTONS & FORMULAIRES 
    ========================================================================== */
 input[type="text"], input[type="password"], input[type="date"], select {
     padding: 10px;
@@ -139,26 +139,19 @@ input[type="text"], input[type="password"], input[type="date"], select {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
     width: 40px;       
     height: 40px;
-
     background-color: rgba(10, 49, 108, 0.6);
     color: white;
-
     border: none;
     border-radius: 50%;
-
     font-size: 18px;   
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
     z-index: 10;
-
     transition: all 0.2s ease;
-
     line-height: 1; 
     font-weight: bold;
 }
@@ -210,7 +203,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   3. SECTIONS PRINCIPALES 
+ SECTIONS PRINCIPALES 
    ========================================================================== */
 #section-rdv, #section-login, #section-admin, #section-affichage {
     background-color: #c9def5;
@@ -226,7 +219,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   4. PAGE ACCUEIL & ÉQUIPE
+ PAGE ACCUEIL & ÉQUIPE
    ========================================================================== */
 #debut {
     display: flex;
@@ -267,8 +260,8 @@ input[type="text"], input[type="password"], input[type="date"], select {
 
 #carousel {
     position: relative;
-    width: 40%;
-    height: 250px; 
+    width: 50%;
+    height: 400px; 
     margin-right: 40px;
     overflow: hidden; 
     border-radius: 10px;
@@ -452,7 +445,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   5. PAGE RDV 
+    PAGE RDV 
    ========================================================================== */
 .conteneur-rdv {
     display: flex;
@@ -501,7 +494,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   6. PAGES ADMIN & LOGIN 
+  PAGES ADMIN & LOGIN 
    ========================================================================== */
 .boite-login, .boite-admin {
     display: flex;
@@ -535,7 +528,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   7. CALENDRIER DES PERMANENCES (Emploi du temps)
+ CALENDRIER DES PERMANENCES (Emploi du temps)
    ========================================================================== */
 .navigation-semaine {
     display: flex;
@@ -626,7 +619,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (Mobiles & Tablettes)
+ RESPONSIVE DESIGN (Mobiles & Tablettes)
    ========================================================================== */
 @media (max-width: 768px) {
 /* Header & Navigation */
@@ -679,7 +672,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 
     #carousel {
         width: 100%;
-        height: 250px; 
+        height: 350px; 
         margin-right: 0;
     }
 
@@ -1043,7 +1036,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 @media (max-width: 768px) {
     #carousel {
-        height: 200px;
+        height: 350px;
     }
 }
 @media (max-width: 768px) {
@@ -1250,7 +1243,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   DESCRIPTION DU SITE - PAGE À PROPOS
+   À PROPOS
    ========================================================================== */
 
 .description-site {

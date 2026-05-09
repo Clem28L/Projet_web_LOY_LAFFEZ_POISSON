@@ -115,7 +115,6 @@ function afficherPermanences() {
 
     let nomsDesJours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
     let datesDeLaSemaine = [];
-    
     let htmlEntete = "<th>Heure</th>";
     
     for (let i = 0; i < 5; i++) {
@@ -131,7 +130,6 @@ function afficherPermanences() {
     
     enteteTableau.innerHTML = htmlEntete;
     titreSemaine.innerHTML = "Semaine du " + formaterDateFR(dateLundi);
-
     corpsTableau.innerHTML = "";
     
     let heuresListe = ["08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18"];
@@ -144,12 +142,10 @@ function afficherPermanences() {
         for (let j = 0; j < 5; j++) {
             ligne.innerHTML += "<td id='col-" + j + "-" + heureActuelle + "'></td>";
         }
-        
         corpsTableau.appendChild(ligne);
     }
 
     let listeDesPermanences = JSON.parse(localStorage.getItem("listePermanences"));
-    
     if (listeDesPermanences === null) {
         listeDesPermanences = [];
     }
@@ -178,7 +174,6 @@ function afficherPermanences() {
             if (positionJour !== -1) {
                 let heureString = permanenceActuelle.heure.substring(0, 2);
                 let heureNombre = parseInt(heureString);
-                
                 let idCaseDepart = "col-" + positionJour + "-" + heureString;
                 let caseDepart = document.getElementById(idCaseDepart);
                 

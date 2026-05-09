@@ -34,19 +34,15 @@ function afficherMessage(texte, typeAuteur) {
 
 function traiterMessage(intentions, messageUtilisateur) {
     let messagePropre = messageUtilisateur.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    
     let dateAujourdhui = new Date().toISOString().split('T')[0];
 
     if (messagePropre.includes("permanence") || messagePropre.includes("cours") || messagePropre.includes("soutien")) {
-        
         let toutesLesPermanences = JSON.parse(localStorage.getItem("listePermanences"));
-        
         if (toutesLesPermanences === null || toutesLesPermanences.length === 0) {
             return "Aucune permanence n'est prévue. Regarde sur la <a href='permanences.html'>Page Permanences</a>.";
         }
         
         let permanencesFutures = toutesLesPermanences.filter(permanence => permanence.date >= dateAujourdhui);
-
         let permanencesFiltrees = permanencesFutures;
         let matiereTrouvee = false;
         
@@ -81,27 +77,20 @@ function traiterMessage(intentions, messageUtilisateur) {
     }
 
     if (messagePropre.includes("rdv") || messagePropre.includes("rendez-vous") || messagePropre.includes("libre") || messagePropre.includes("coordinateur") || messagePropre.includes("occupe")) {
-        
         let tousLesRDV = JSON.parse(localStorage.getItem("mesRdvEfrei"));
-        
         if (tousLesRDV === null || tousLesRDV.length === 0) {
             return "Le coordinateur n'a pas de rdv prévu. Tu peux vérifier ses disponibilités complètes sur la <a href='rdv.html'>Page de RDV</a>.";
         }
-
         let rdvFuturs = tousLesRDV.filter(rdvPhrase => rdvPhrase.substring(0, 10) >= dateAujourdhui);
-
         if (rdvFuturs.length === 0) {
             return "Le coordinateur n'a pas de rdv prévu. Tu peux vérifier ses disponibilités complètes sur la <a href='rdv.html'>Page de RDV</a>.";
         }
-        
         let reponseRDV = "Le coordinateur n'est pas disponible pendant ces créneaux : <br><br>";
-        
         rdvFuturs.forEach(rdvPhrase => {
             reponseRDV += "- " + rdvPhrase + "<br>"; 
         });
 
         reponseRDV += "<br>Aller consulter les créneaux libres sur la <a href='rdv.html'>Page de RDV</a>.";
-        
         return reponseRDV;
     }
 
