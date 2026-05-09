@@ -975,8 +975,8 @@ input[type="text"], input[type="password"], input[type="date"], select {
 
 /* Style pour les créneaux occupés dans le calendrier RDV */
 .carte-occupe {
-    background-color: #d1d5db; /* Gris clair */
-    border-left: 4px solid #6b7280; /* Gris foncé */
+    background-color: #d1d5db; 
+    border-left: 4px solid #6b7280;
     color: #374151;
     font-weight: bold;
     padding: 5px;
@@ -1054,7 +1054,7 @@ input[type="text"], input[type="password"], input[type="date"], select {
 }
 
 /* ==========================================================================
-   PAGE QUIZ - STYLE COHÉRENT AVEC L'ACCUEIL
+   PAGE QUIZ 
    ========================================================================== */
 
 #quiz-page {
@@ -1085,11 +1085,9 @@ input[type="text"], input[type="password"], input[type="date"], select {
     max-width: 780px;
     margin: auto;
     background: white;
-    border-radius: 22px;
+    border-radius: 18px;
     padding: 40px;
     color: #0A316C;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
-    border-top: 5px solid #81ECEC;
 }
 
 .question {
@@ -1261,8 +1259,6 @@ input[type="text"], input[type="password"], input[type="date"], select {
     background-color: #ffffff;
     border-radius: 18px;
     padding: 45px 55px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-    border-top: 5px solid #000000;
 }
 
 .description-site h2 {
@@ -1278,7 +1274,6 @@ input[type="text"], input[type="password"], input[type="date"], select {
     display: block;
     width: 80px;
     height: 4px;
-    
     border-radius: 10px;
     margin: 14px auto 0 auto;
 }
