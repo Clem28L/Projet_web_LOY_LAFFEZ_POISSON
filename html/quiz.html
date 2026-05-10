@@ -11,185 +11,185 @@
 <body>
 
     <header>
-    <div class="header-gauche">
-        <a href="accueuil.html">
-            <img src="/data/logo.png" alt="Logo EFREI" height="40">
-        </a>
+        <div class="header-gauche">
+            <a href="accueuil.html">
+                <img src="/data/logo.png" alt="Logo EFREI" height="40">
+            </a>
 
-        <span id="header-titre">
-            Département Informatique
-        </span>
-    </div>
-
-    <nav>
-        <a href="accueuil.html">Accueil</a>
-        <a href="equipe.html">Équipe</a>
-        <a href="rdv.html">RDV</a>
-        <a href="permanences.html">Permanences</a>
-        <a href="quiz.html">Quiz</a>
-    </nav>
-</header>
-
-   <section id="quiz-page">
-
-    <div class="quiz-intro">
-        <h1>Quel domaine de l’informatique est fait pour vous ?</h1>
-        <p>
-            Répondez à quelques questions pour découvrir les domaines qui correspondent
-            le mieux à votre façon de réfléchir, de travailler et de résoudre des problèmes.
-        </p>
-    </div>
-
-    <div id="quiz-container">
-
-        <div class="question active">
-            <span class="question-number">Question 1 / 5</span>
-            <p>Dans un projet d’équipe complexe, quel rôle prenez-vous naturellement ?</p>
-
-            <button onclick="answer({dev:2, reseau:1})">
-                Structurer le projet et transformer les idées en fonctionnalités concrètes
-            </button>
-
-            <button onclick="answer({data:2, dev:1})">
-                Comprendre les informations disponibles pour prendre de meilleures décisions
-            </button>
-
-            <button onclick="answer({cyber:2, reseau:1})">
-                Identifier les risques, les points faibles et les erreurs possibles
-            </button>
-
-            <button onclick="answer({reseau:2, cyber:1})">
-                Organiser les connexions entre les outils, les services et les utilisateurs
-            </button>
-
-            <button onclick="answer({embarque:2, dev:1})">
-                Faire fonctionner une solution avec du matériel, des capteurs ou des objets réels
-            </button>
+            <span id="header-titre">
+                Département Informatique
+            </span>
         </div>
 
-        <div class="question">
-            <span class="question-number">Question 2 / 5</span>
-            <p>Face à un problème technique, votre premier réflexe serait plutôt de :</p>
+        <nav>
+            <a href="accueuil.html">Accueil</a>
+            <a href="equipe.html">Équipe</a>
+            <a href="rdv.html">RDV</a>
+            <a href="permanences.html">Permanences</a>
+            <a href="quiz.html">Quiz</a>
+        </nav>
+    </header>
 
-            <button onclick="answer({dev:2})">
-                Découper le problème en petites étapes pour construire une solution fiable
-            </button>
+    <section id="quiz-page">
 
-            <button onclick="answer({data:2})">
-                Chercher des tendances, des chiffres ou des indices pour comprendre la situation
-            </button>
-
-            <button onclick="answer({cyber:2})">
-                Vérifier si le problème peut venir d’une faille, d’un accès ou d’un mauvais usage
-            </button>
-
-            <button onclick="answer({reseau:2})">
-                Observer comment les systèmes communiquent entre eux et où ça bloque
-            </button>
-
-            <button onclick="answer({embarque:2})">
-                Tester directement le comportement du système dans des conditions réelles
-            </button>
+        <div class="quiz-intro">
+            <h1>Quel domaine de l’informatique est fait pour vous ?</h1>
+            <p>
+                Répondez à quelques questions pour découvrir les domaines qui correspondent
+                le mieux à votre façon de réfléchir, de travailler et de résoudre des problèmes.
+            </p>
         </div>
 
-        <div class="question">
-            <span class="question-number">Question 3 / 5</span>
-            <p>Le type de projet qui vous attire le plus serait :</p>
+        <div id="quiz-container">
 
-            <button onclick="answer({dev:2, data:1})">
-                Une plateforme web ou mobile utilisée par de nombreux utilisateurs
+            <div class="question active">
+                <span class="question-number">Question 1 / 5</span>
+                <p>Dans un projet d’équipe complexe, quel rôle prenez-vous naturellement ?</p>
+
+                <button onclick="answer({dev:2, reseau:1})">
+                    Structurer le projet et transformer les idées en fonctionnalités concrètes
+                </button>
+
+                <button onclick="answer({data:2, dev:1})">
+                    Comprendre les informations disponibles pour prendre de meilleures décisions
+                </button>
+
+                <button onclick="answer({cyber:2, reseau:1})">
+                    Identifier les risques, les points faibles et les erreurs possibles
+                </button>
+
+                <button onclick="answer({reseau:2, cyber:1})">
+                    Organiser les connexions entre les outils, les services et les utilisateurs
+                </button>
+
+                <button onclick="answer({embarque:2, dev:1})">
+                    Faire fonctionner une solution avec du matériel, des capteurs ou des objets réels
+                </button>
+            </div>
+
+            <div class="question">
+                <span class="question-number">Question 2 / 5</span>
+                <p>Face à un problème technique, votre premier réflexe serait plutôt de :</p>
+
+                <button onclick="answer({dev:2})">
+                    Découper le problème en petites étapes pour construire une solution fiable
+                </button>
+
+                <button onclick="answer({data:2})">
+                    Chercher des tendances, des chiffres ou des indices pour comprendre la situation
+                </button>
+
+                <button onclick="answer({cyber:2})">
+                    Vérifier si le problème peut venir d’une faille, d’un accès ou d’un mauvais usage
+                </button>
+
+                <button onclick="answer({reseau:2})">
+                    Observer comment les systèmes communiquent entre eux et où ça bloque
+                </button>
+
+                <button onclick="answer({embarque:2})">
+                    Tester directement le comportement du système dans des conditions réelles
+                </button>
+            </div>
+
+            <div class="question">
+                <span class="question-number">Question 3 / 5</span>
+                <p>Le type de projet qui vous attire le plus serait :</p>
+
+                <button onclick="answer({dev:2, data:1})">
+                    Une plateforme web ou mobile utilisée par de nombreux utilisateurs
+                </button>
+
+                <button onclick="answer({data:2, embarque:1})">
+                    Un système capable de prédire, recommander ou reconnaître automatiquement
+                </button>
+
+                <button onclick="answer({cyber:2})">
+                    Un outil qui détecte les comportements suspects et protège les données
+                </button>
+
+                <button onclick="answer({reseau:2, dev:1})">
+                    Une infrastructure cloud capable de gérer beaucoup de connexions
+                </button>
+
+                <button onclick="answer({embarque:2, reseau:1})">
+                    Un robot, un drone ou un objet connecté qui réagit à son environnement
+                </button>
+            </div>
+
+            <div class="question">
+                <span class="question-number">Question 4 / 5</span>
+                <p>Dans votre manière de travailler, vous vous reconnaissez surtout dans :</p>
+
+                <button onclick="answer({dev:2})">
+                    Construire, améliorer et rendre une solution agréable à utiliser
+                </button>
+
+                <button onclick="answer({data:2})">
+                    Comprendre des situations complexes grâce à l’analyse et à la logique
+                </button>
+
+                <button onclick="answer({cyber:2})">
+                    Anticiper les problèmes avant qu’ils ne deviennent dangereux
+                </button>
+
+                <button onclick="answer({reseau:2})">
+                    Garder une vision globale pour que tout reste stable et connecté
+                </button>
+
+                <button onclick="answer({embarque:2})">
+                    Résoudre des problèmes concrets entre logiciel, électronique et mécanique
+                </button>
+            </div>
+
+            <div class="question">
+                <span class="question-number">Question 5 / 5</span>
+                <p>Quel environnement professionnel vous donne le plus envie ?</p>
+
+                <button onclick="answer({dev:2})">
+                    Une équipe produit qui développe des applications ou logiciels innovants
+                </button>
+
+                <button onclick="answer({data:2})">
+                    Un laboratoire ou une entreprise qui exploite l’intelligence artificielle
+                </button>
+
+                <button onclick="answer({cyber:2})">
+                    Une cellule de sécurité chargée de protéger des systèmes sensibles
+                </button>
+
+                <button onclick="answer({reseau:2})">
+                    Une équipe infrastructure qui gère serveurs, cloud et réseaux
+                </button>
+
+                <button onclick="answer({embarque:2})">
+                    Un secteur industriel autour des véhicules, drones, robots ou objets connectés
+                </button>
+            </div>
+
+            <div id="result" style="display:none;"></div>
+
+            <button id="restart-btn" class="btn-restart" style="display:none;" onclick="restartQuiz()">
+                Recommencer le quiz
             </button>
 
-            <button onclick="answer({data:2, embarque:1})">
-                Un système capable de prédire, recommander ou reconnaître automatiquement
-            </button>
-
-            <button onclick="answer({cyber:2})">
-                Un outil qui détecte les comportements suspects et protège les données
-            </button>
-
-            <button onclick="answer({reseau:2, dev:1})">
-                Une infrastructure cloud capable de gérer beaucoup de connexions
-            </button>
-
-            <button onclick="answer({embarque:2, reseau:1})">
-                Un robot, un drone ou un objet connecté qui réagit à son environnement
-            </button>
         </div>
 
-        <div class="question">
-            <span class="question-number">Question 4 / 5</span>
-            <p>Dans votre manière de travailler, vous vous reconnaissez surtout dans :</p>
-
-            <button onclick="answer({dev:2})">
-                Construire, améliorer et rendre une solution agréable à utiliser
-            </button>
-
-            <button onclick="answer({data:2})">
-                Comprendre des situations complexes grâce à l’analyse et à la logique
-            </button>
-
-            <button onclick="answer({cyber:2})">
-                Anticiper les problèmes avant qu’ils ne deviennent dangereux
-            </button>
-
-            <button onclick="answer({reseau:2})">
-                Garder une vision globale pour que tout reste stable et connecté
-            </button>
-
-            <button onclick="answer({embarque:2})">
-                Résoudre des problèmes concrets entre logiciel, électronique et mécanique
-            </button>
-        </div>
-
-        <div class="question">
-            <span class="question-number">Question 5 / 5</span>
-            <p>Quel environnement professionnel vous donne le plus envie ?</p>
-
-            <button onclick="answer({dev:2})">
-                Une équipe produit qui développe des applications ou logiciels innovants
-            </button>
-
-            <button onclick="answer({data:2})">
-                Un laboratoire ou une entreprise qui exploite l’intelligence artificielle
-            </button>
-
-            <button onclick="answer({cyber:2})">
-                Une cellule de sécurité chargée de protéger des systèmes sensibles
-            </button>
-
-            <button onclick="answer({reseau:2})">
-                Une équipe infrastructure qui gère serveurs, cloud et réseaux
-            </button>
-
-            <button onclick="answer({embarque:2})">
-                Un secteur industriel autour des véhicules, drones, robots ou objets connectés
-            </button>
-        </div>
-
-        <div id="result" style="display:none;"></div>
-
-        <button id="restart-btn" class="btn-restart" style="display:none;" onclick="restartQuiz()">
-            Recommencer le quiz
-        </button>
-
-    </div>
-
-</section>
+    </section>
 
     <footer>
-    <p>© 2025 Département Informatique — EFREI Paris</p>
+        <p>© 2025 Département Informatique — EFREI Paris</p>
 
-    <a href="https://www.efrei.fr" target="_blank">
-        <img src="/data/Logo-Efrei-Blanc.png" alt="Logo EFREI">
-    </a>
+        <a href="https://www.efrei.fr" target="_blank">
+            <img src="/data/Logo-Efrei-Blanc.png" alt="Logo EFREI">
+        </a>
 
-    <div class="footer-liens">
-        <a href="a-propos.html">À propos</a>
-        <a href="login.html">Admin</a>
-    </div>
-</footer>
-<div class="chat-toggle" onclick="toggleChat()">
+        <div class="footer-liens">
+            <a href="a-propos.html">À propos</a>
+            <a href="login.html">Admin</a>
+        </div>
+    </footer>
+    <div class="chat-toggle" onclick="toggleChat()">
         <img src="../data/chatbot.png" alt="Ouvrir le chat" class="chat-img">
     </div>
 
@@ -202,7 +202,7 @@
         </div>
         <div class="chat-footer">
             <input type="text" id="chat-input" placeholder="Écrire un message...">
-            <button id="btn-envoyer-chat" onclick="fetchJSON('intents.json')">Envoyer</button>
+            <button id="btn-envoyer-chat" onclick="fetchJSON('../data/intents.json')">Envoyer</button>
         </div>
     </div>
     <script src="../js/chatbot.js"></script>
